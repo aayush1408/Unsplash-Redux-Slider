@@ -1,8 +1,9 @@
 import { combineReducers } from 'redux';
 import { sliderReducer } from '../ProjectShowcase/reducers';
+import { mobileReducer } from '../CheckMobile/reducers';
 
 export default combineReducers({
   animal: sliderReducer('animal'),
-  cars: sliderReducer('cars'),
-  planets: sliderReducer('planets')
+  anime: sliderReducer('anime'),
+  isMobile: mobileReducer
 });

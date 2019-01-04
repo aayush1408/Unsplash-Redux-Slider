@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import { imagesFetch } from '../actions';
-
+import classes from './index.css';
 class ProjectShowcase extends Component {
   componentDidMount() {
     this.props.fetchImages(this.props.query);
@@ -15,6 +15,7 @@ class ProjectShowcase extends Component {
         {images.imgData.length > 0 &&
           <img
             alt="Internet not working"
+            className={classes.slider}
             src={images.imgData[images.currentImageIndex].urls.small}
           />
         }

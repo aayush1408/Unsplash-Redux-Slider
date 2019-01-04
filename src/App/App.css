@@ -1,0 +1,14 @@
+:local(.AppDesktop){
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+}
+
+:local(.AppMobile){
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+}
+body{
+  background-color: gray;
+}
