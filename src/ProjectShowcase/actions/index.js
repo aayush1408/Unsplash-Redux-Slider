@@ -11,7 +11,7 @@ export const startInterval = query => dispatch => {
     dispatch({
       type: `${actionTypes.INCREMENT_INDEX}_${query}`
     })
-  }, 8000);
+  }, 4000);
 };
 
 export const imagesFetch = query => async dispatch => {

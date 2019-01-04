@@ -5,6 +5,7 @@ const initialState = {
   currentImageIndex: 0
 };
 
+// Higher order reducer
 export const sliderReducer = namespace => (state = initialState, action) => {
   switch (action.type) {
     case `${actionTypes.IMAGES_FETCH}_${namespace}`:

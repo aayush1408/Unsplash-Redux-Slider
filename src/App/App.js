@@ -8,6 +8,7 @@ import ProjectShowCase from '../ProjectShowcase/containers';
 import CheckMobile from '../CheckMobile/container';
 import Header from '../Header/Header';
 import classes from './App.css';
+
 const middlewares = [thunk, logger];
 const store = createStore(rootReducer, applyMiddleware(...middlewares));
 
