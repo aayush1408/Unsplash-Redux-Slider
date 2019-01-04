@@ -6,22 +6,22 @@ export const actionTypes = {
   INCREMENT_INDEX: 'INCREMENT_INDEX'
 };
 
-export const startInterval = () => (dispatch) => {
+export const startInterval = query => dispatch => {
   setInterval(() => {
     dispatch({
-      type: actionTypes.INCREMENT_INDEX
+      type: `${actionTypes.INCREMENT_INDEX}_${query}`
     })
   }, 3000);
 };
 
-export const imagesFetch = (query) => async (dispatch) => {
+export const imagesFetch = query => async dispatch => {
   try {
     const imgs = await axios.get(`https://api.unsplash.com/search/photos?client_id=${CLIENT_SECRET}&query=${query}`);
     dispatch({
-      type: actionTypes.IMAGES_FETCH,
+      type: `${actionTypes.IMAGES_FETCH}_${query}`,
       payload: imgs.data.results
     });
-    dispatch(startInterval())
+    dispatch(startInterval(query));
   }
   catch (error) {
     console.log(error);

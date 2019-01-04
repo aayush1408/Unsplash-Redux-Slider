@@ -15,6 +15,8 @@ class App extends Component {
       <Provider store={store}>
         <div className="App">
           <ProjectShowCase query="animal" />
+          <ProjectShowCase query="cars" />
+          <ProjectShowCase query="planets" />
         </div>
       </Provider>
     );

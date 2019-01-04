@@ -1,6 +1,8 @@
 import { combineReducers } from 'redux';
-import { imagesFetch } from '../ProjectShowcase/reducers';
+import { sliderReducer } from '../ProjectShowcase/reducers';
 
 export default combineReducers({
-  images: imagesFetch
+  animal: sliderReducer('animal'),
+  cars: sliderReducer('cars'),
+  planets: sliderReducer('planets')
 });

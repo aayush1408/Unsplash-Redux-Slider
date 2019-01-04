@@ -5,11 +5,11 @@ const initialState = {
   currentImageIndex: 0
 };
 
-export function imagesFetch(state = initialState, action) {
+export const sliderReducer = namespace => (state = initialState, action) => {
   switch (action.type) {
-    case actionTypes.IMAGES_FETCH:
+    case `${actionTypes.IMAGES_FETCH}_${namespace}`:
       return { ...state, imgData: action.payload };
-    case actionTypes.INCREMENT_INDEX:
+    case `${actionTypes.INCREMENT_INDEX}_${namespace}`:
       if (state.currentImageIndex >= 9) {
         return { ...state, currentImageIndex: 0 }
       }

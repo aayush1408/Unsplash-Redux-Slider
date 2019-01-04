@@ -13,19 +13,23 @@ class ProjectShowcase extends Component {
     return (
       <div>
         {images.imgData.length > 0 &&
-          <img alt="Internet not working" src={images.imgData[images.currentImageIndex].urls.small} />
+          <img
+            alt="Internet not working"
+            src={images.imgData[images.currentImageIndex].urls.small}
+          />
         }
       </div>
     );
   }
 }
 
-const mapStateToProps = (state) => {
-  const { images } = state;
+const mapStateToProps = (state, ownProps) => {
+  const images = state[ownProps.query];
   return {
     images
   }
 };
+
 const mapDispatchToProps = dispatch => {
   return {
     fetchImages: (q) => dispatch(imagesFetch(q)),
